@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "certificates": "Certificates",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "name": "Ashraf Mohamed",
+    "title": "Full Stack Developer",
+    "description": "Passionate about creating innovative digital solutions with modern technologies",
+    "viewWork": "View My Work",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "intro": "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating innovative solutions and turning ideas into reality through code.",
+    "experience": "With years of experience in web development, I specialize in React, Node.js, and cloud technologies. I'm always eager to learn new technologies and take on challenging projects.",
+    "education": {
+      "title": "Education",
+      "degree": "Bachelor's Degree in Computer Science",
+      "university": "Arab Academy for Science, Technology and Maritime Transport",
+      "description": "Strong foundation in computer science principles, algorithms, data structures, and software engineering practices."
+    },
+    "downloadCV": "Download CV"
+  },
+  "projects": {
+    "title": "My Projects",
+    "recent": "Recent Work",
+    "subtitle": "Some of my recent work",
+    "freelance": "Freelance Projects",
+    "personal": "Personal Projects",
+    "openSource": "Open Source",
+    "viewDetails": "View Details",
+    "techStack": "Tech Stack",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "What I work with",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps",
+    "tools": "Tools"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "Professional certifications",
+    "viewCertificate": "View Certificate",
+    "issuedBy": "Issued by",
+    "date": "Date"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's work together",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "getInTouch": "Get in touch with me",
+    "socialMedia": "Follow me on social media",
+    "phone": "Phone",
+    "country": "Country"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "success": "Success!",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  }
+}
