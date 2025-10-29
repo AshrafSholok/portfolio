@@ -135,7 +135,7 @@ const Home = () => {
                 <div className="w-64 h-64 md:w-64 md:h-64 lg:w-[27rem] lg:h-[27rem] rounded-full bg-gradient-to-br from-primary-400 to-secondary-500 p-1">
                   <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-primary-500 to-secondary-600 flex items-center justify-center text-white text-6xl font-bold">
-                      <img src='../../public/ashraf.png' alt="Profile" className="w-full h-full object-cover rounded-full" />
+                      <img src='../../src/assets/ashraf.png' alt="Profile" className="w-full h-full object-cover rounded-full" />
                     </div>
                   </div>
                 </div>
