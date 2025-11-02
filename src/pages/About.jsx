@@ -88,12 +88,18 @@ const About = () => {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="pt-4"
+                className="pt-4 "
               >
-                <button className="btn-primary flex items-center space-x-2 group">
+                {/* Put a cv file in public/ as /cv.pdf so this link downloads it */}
+                <a
+                  href="../../public/Ashraf Mohamed Maher - software Engineer.pdf"
+                  download
+                  className="btn-primary flex items-center space-x-2 group w-fit"
+                  aria-label={t('about.downloadCV')}
+                >
                   <DocumentArrowDownIcon className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" />
                   <span>{t('about.downloadCV')}</span>
-                </button>
+                </a>
               </motion.div>
             </motion.div>
 

@@ -129,7 +129,7 @@ export const projects = [
     description: 'A secure mobile banking application with biometric authentication, transaction history, and real-time notifications.',
     image: '/api/placeholder/400/300',
     category: 'freelance',
-    tech: ['React Native', 'Node.js', 'PostgreSQL', 'AWS', 'Biometric Auth'],
+    tech: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Biometric Auth'],
     liveUrl: '#',
     githubUrl: '#',
     featured: true,

@@ -23,8 +23,19 @@ const Projects = () => {
     label: category.key === 'all' ? 'All Projects' : t(`projects.${category.key}`)
   }));
 
-  const filteredProjects = getProjectsByCategory(activeCategory);
-
+  // Get filtered projects and sort by year/date descending (newest first).
+  const filteredProjects = getProjectsByCategory(activeCategory)
+    .slice() // avoid mutating source
+    .sort((a, b) => {
+      const toTime = (val) => {
+        if (val === undefined || val === null) return 0;
+        // If it's a number (e.g., 2023) keep as year; new Date handles numbers/strings/dates.
+        const t = new Date(val).getTime();
+        return Number.isNaN(t) ? 0 : t;
+      };
+      return toTime(b.year) - toTime(a.year);
+    });
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900/20">
       {/* Hero Section */}
