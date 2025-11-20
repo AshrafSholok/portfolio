@@ -5,7 +5,11 @@ import { ArrowRightIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
 import Recent from '../components/Recent';
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
+  const lgTextAlign = isRTL ? 'lg:text-right' : 'lg:text-left';
+  const lgJustify = isRTL ? 'lg:justify-start' : 'lg:justify-end';
+  const arrowHoverClass = isRTL ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1';
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -14,6 +18,7 @@ const Home = () => {
       transition: {
         staggerChildren: 0.3,
       },
+      
     },
   };
 
@@ -61,7 +66,7 @@ const Home = () => {
               {/* Greeting */}
               <motion.div
                 variants={itemVariants}
-                className="mb-4 text-center lg:text-left"
+                className={`mb-4 text-center ${lgTextAlign}`}
               >
                 <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium">
                   {t('home.greeting')}
@@ -71,7 +76,7 @@ const Home = () => {
               {/* Name */}
               <motion.h1
                 variants={itemVariants}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4 text-center lg:text-left"
+                className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4 text-center ${lgTextAlign}`}
               >
                 {t('home.name')}
               </motion.h1>
@@ -79,7 +84,7 @@ const Home = () => {
               {/* Title */}
               <motion.div
                 variants={itemVariants}
-                className="mb-6 text-center lg:text-left"
+                className={`mb-6 text-center ${lgTextAlign}`}
               >
                 <h3 className="text-xl md:text-2xl lg:text-3xl text-primary-600 dark:text-primary-400 font-semibold">
                   {t('home.title')}
@@ -89,7 +94,7 @@ const Home = () => {
               {/* Description */}
               <motion.p
                 variants={itemVariants}
-                className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-center lg:text-left"
+                className={`text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-center ${lgTextAlign}`}
               >
                 {t('home.description')}
               </motion.p>
@@ -97,16 +102,16 @@ const Home = () => {
               {/* CTA Buttons */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
+                className={`flex flex-col sm:flex-row gap-4 lg:justify-start items-center `}
               >
                 <Link to="/projects">
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="btn-primary flex items-center space-x-2 group"
+                    className={`btn-primary flex items-center ${isRTL ? 'flex-row-reverse gap-2' : 'gap-2'} group`}
                   >
                     <span>{t('home.viewWork')}</span>
-                    <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRightIcon className={`w-5 h-5 ${arrowHoverClass} transition-transform duration-200`} />
                   </motion.button>
                 </Link>
 
@@ -114,7 +119,7 @@ const Home = () => {
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="btn-outline flex items-center space-x-2 group"
+                    className={`btn-outline flex items-center ${isRTL ? 'flex-row-reverse gap-2' : 'gap-2'} group`}
                   >
                     <span>{t('home.contactMe')}</span>
                     <CodeBracketIcon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />

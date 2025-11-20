@@ -14,7 +14,8 @@ import {
 import { projects, projectCategories, getProjectsByCategory } from '../data/projectsData';
 
 const Projects = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
   const [activeCategory, setActiveCategory] = useState('all');
 
   // Create categories with translations
@@ -113,13 +114,13 @@ const Projects = () => {
                       alt={project.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                       <motion.a
                         href={project.liveUrl}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-200"
-                        title="Live Demo"
+                        title="Live"
                       >
                         <EyeIcon className="w-5 h-5" />
                       </motion.a>
@@ -145,7 +146,7 @@ const Projects = () => {
                          t('projects.openSource')}
                       </span>
                       {project.featured && (
-                        <div className="flex items-center space-x-1 text-yellow-500">
+                        <div className="flex items-center gap-1 text-yellow-500">
                           <StarIcon className="w-4 h-4" />
                           <span className="text-xs font-medium">Featured</span>
                         </div>
@@ -158,13 +159,13 @@ const Projects = () => {
                     </h3>
 
                     {/* Project Meta */}
-                    <div className="flex items-center space-x-4 mb-3 text-sm text-gray-600 dark:text-gray-400">
-                      <div className="flex items-center space-x-1">
+                    <div className="flex items-center gap-4 mb-3 text-sm text-gray-600 dark:text-gray-400">
+                      <div className="flex items-center gap-1">
                         <CalendarIcon className="w-4 h-4" />
                         <span>{project.year}</span>
                       </div>
                       {project.client && (
-                        <div className="flex items-center space-x-1">
+                        <div className="flex items-center gap-1">
                           <UserIcon className="w-4 h-4" />
                           <span>{project.client}</span>
                         </div>
@@ -199,21 +200,21 @@ const Projects = () => {
                         <motion.button
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
-                          className="w-full bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-2"
+                          className={`w-full bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-2 gap-1`}
                         >
                           <EyeIcon className="w-4 h-4" />
                           <span>{t('projects.viewDetails')}</span>
                         </motion.button>
                       </Link>
                       
-                      <div className="flex space-x-2">
+                      <div className={`flex gap-2`}>
                         <motion.a
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-1 text-sm"
+                          className={`flex-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-1 text-sm`}
                         >
                           <ArrowTopRightOnSquareIcon className="w-4 h-4" />
                           <span>Live</span>
@@ -224,16 +225,16 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-1 text-sm"
+                          className={`flex-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-1 text-sm`}
                         >
                           <CodeBracketIcon className="w-4 h-4" />
                           <span>Code</span>
                         </motion.a>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                   </div>
+                 </motion.div>
+               ))}
             </motion.div>
           </AnimatePresence>
         </div>
