@@ -159,10 +159,10 @@ const Certificates = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Certification Achievements
+              {t('certificates.statsTitle')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Continuous learning and professional development through industry-recognized certifications
+              {t('certificates.statsSubtitle')}
             </p>
           </motion.div>
 
@@ -200,10 +200,10 @@ const Certificates = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Continuous Learning Journey
+              {t('certificates.learningTitle')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              I believe in lifelong learning and staying updated with the latest technologies and best practices
+              {t('certificates.learningSubtitle')}
             </p>
           </motion.div>
 
@@ -242,17 +242,17 @@ const Certificates = () => {
             className="text-center text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to work with a certified professional?
+              {t('certificates.ctaTitle')}
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              My certifications demonstrate my commitment to excellence and continuous learning
+              {t('certificates.ctaText')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
             >
-              Let's Discuss Your Project
+              {t('certificates.ctaButton')}
             </motion.button>
           </motion.div>
         </div>

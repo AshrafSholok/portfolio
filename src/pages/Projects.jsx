@@ -21,7 +21,7 @@ const Projects = () => {
   // Create categories with translations
   const categories = projectCategories.map(category => ({
     ...category,
-    label: category.key === 'all' ? 'All Projects' : t(`projects.${category.key}`)
+    label: category.key === 'all' ? t('projects.all') : t(`projects.${category.key}`)
   }));
 
   // Get filtered projects and sort by year/date descending (newest first).
@@ -120,7 +120,7 @@ const Projects = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-200"
-                        title="Live"
+                        title={t('projects.live')}
                       >
                         <EyeIcon className="w-5 h-5" />
                       </motion.a>
@@ -129,7 +129,7 @@ const Projects = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors duration-200"
-                        title="Source Code"
+                        title={t('projects.source')}
                       >
                         <CodeBracketIcon className="w-5 h-5" />
                       </motion.a>
@@ -148,7 +148,7 @@ const Projects = () => {
                       {project.featured && (
                         <div className="flex items-center gap-1 text-yellow-500">
                           <StarIcon className="w-4 h-4" />
-                          <span className="text-xs font-medium">Featured</span>
+                          <span className="text-xs font-medium">{t('projects.featured')}</span>
                         </div>
                       )}
                     </div>
@@ -217,7 +217,7 @@ const Projects = () => {
                           className={`flex-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-1 text-sm`}
                         >
                           <ArrowTopRightOnSquareIcon className="w-4 h-4" />
-                          <span>Live</span>
+                          <span>{t('projects.live')}</span>
                         </motion.a>
                         <motion.a
                           href={project.githubUrl}
@@ -228,7 +228,7 @@ const Projects = () => {
                           className={`flex-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-1 text-sm`}
                         >
                           <CodeBracketIcon className="w-4 h-4" />
-                          <span>Code</span>
+                          <span>{t('projects.code')}</span>
                         </motion.a>
                       </div>
                     </div>
@@ -251,17 +251,17 @@ const Projects = () => {
             className="text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Interested in working together?
+              {t('projects.ctaTitle')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-              I'm always excited to take on new challenges and create amazing digital experiences.
+              {t('projects.ctaText')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary"
             >
-              Start a Project
+              {t('projects.ctaButton')}
             </motion.button>
           </motion.div>
         </div>

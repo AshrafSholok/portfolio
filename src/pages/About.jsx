@@ -28,9 +28,9 @@ const About = () => {
   };
 
   const skills = [
-    { name: 'Frontend Development', icon: CodeBracketIcon, color: 'text-blue-500' },
-    { name: 'Backend Development', icon: CpuChipIcon, color: 'text-green-500' },
-    { name: 'Cloud Technologies', icon: CloudIcon, color: 'text-purple-500' },
+    { name: t('about.skills.frontend'), icon: CodeBracketIcon, color: 'text-blue-500' },
+    { name: t('about.skills.backend'), icon: CpuChipIcon, color: 'text-green-500' },
+    { name: t('about.skills.devops'), icon: CloudIcon, color: 'text-purple-500' },
   ];
 
   return (
@@ -130,7 +130,7 @@ const About = () => {
                         {skill.name}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Specialized expertise and hands-on experience
+                        {t('about.skills.description')}
                       </p>
                     </div>
                   </div>
@@ -197,49 +197,37 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              My Values
+              {t('about.values.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              The principles that guide my work and drive my passion for development
+              {t('about.values.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Innovation',
-                description: 'Always exploring new technologies and approaches to solve problems creatively.',
-                icon: '💡',
-              },
-              {
-                title: 'Quality',
-                description: 'Committed to writing clean, maintainable code and delivering exceptional results.',
-                icon: '⭐',
-              },
-              {
-                title: 'Collaboration',
-                description: 'Believing in the power of teamwork and open communication for project success.',
-                icon: '🤝',
-              },
+            { [
+              { key: 'innovation', icon: '💡' },
+              { key: 'quality', icon: '⭐' },
+              { key: 'collaboration', icon: '🤝' },
             ].map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="card p-8 text-center group"
-              >
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
+               <motion.div
+                 key={value.title}
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: index * 0.2, duration: 0.6 }}
+                 whileHover={{ scale: 1.05, y: -5 }}
+                 className="card p-8 text-center group"
+               >
+                 <div className="text-4xl mb-4">{value.icon}</div>
+                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                   {t(`about.values.${value.key}.title`)}
+                 </h3>
+                 <p className="text-gray-600 dark:text-gray-400">
+                   {t(`about.values.${value.key}.description`)}
+                 </p>
+               </motion.div>
+             ))}
           </div>
         </div>
       </section>
@@ -255,17 +243,17 @@ const About = () => {
             className="text-center bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-12 text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to work together?
+              {t('about.ctaTitle')}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Let's discuss your next project and bring your ideas to life
+              {t('about.ctaText')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
             >
-              Get In Touch
+              {t('about.ctaButton')}
             </motion.button>
           </motion.div>
         </div>

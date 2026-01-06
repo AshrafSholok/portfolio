@@ -13,7 +13,13 @@
     "title": "Software Engineer",
     "description": "Passionate about creating innovative digital solutions with modern technologies",
     "viewWork": "View My Work",
-    "contactMe": "Contact Me"
+    "contactMe": "Contact Me",
+    "stats": {
+      "projects": "Projects Completed",
+      "years": "Years Experience",
+      "clients": "Happy Clients",
+      "technologies": "Technologies"
+    }
   },
   "about": {
     "title": "About Me",
@@ -26,7 +32,32 @@
       "university": "Arab Academy for Science, Technology and Maritime Transport",
       "description": "Strong foundation in computer science principles, algorithms, data structures, and software engineering practices."
     },
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "skills": {
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "devops": "Cloud Technologies",
+      "description": "Specialized expertise and hands-on experience"
+    },
+    "values": {
+      "title": "My Values",
+      "subtitle": "The principles that guide my work and drive my passion for development",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Always exploring new technologies and approaches to solve problems creatively."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Committed to writing clean, maintainable code and delivering exceptional results."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Believing in the power of teamwork and open communication for project success."
+      }
+    },
+    "ctaTitle": "Ready to work together?",
+    "ctaText": "Let's discuss your next project and bring your ideas to life",
+    "ctaButton": "Get In Touch"
   },
   "projects": {
     "title": "My Projects",
@@ -38,7 +69,24 @@
     "viewDetails": "View Details",
     "techStack": "Tech Stack",
     "liveDemo": "Live Demo",
-    "sourceCode": "Source Code"
+    "sourceCode": "Source Code",
+    "all": "All Projects",
+    "live": "Live",
+    "source": "Source",
+    "code": "Code",
+    "featured": "Featured",
+    "ctaTitle": "Interested in working together?",
+    "ctaText": "I'm always excited to take on new challenges and create amazing digital experiences.",
+    "ctaButton": "Start a Project",
+    "backToProjects": "Back to Projects",
+    "screenshotsTitle": "Project Screenshots",
+    "challenges": "Challenges",
+    "results": "Results",
+    "projectInfo": "Project Info",
+    "year": "Year",
+    "client": "Client",
+    "category": "Category",
+    "viewCode": "View Code"
   },
   "skills": {
     "title": "Skills & Technologies",
@@ -53,7 +101,14 @@
     "subtitle": "Professional certifications",
     "viewCertificate": "View Certificate",
     "issuedBy": "Issued by",
-    "date": "Date"
+    "date": "Date",
+    "statsTitle": "Certification Achievements",
+    "statsSubtitle": "Continuous learning and professional development through industry-recognized certifications",
+    "learningTitle": "Continuous Learning Journey",
+    "learningSubtitle": "I believe in lifelong learning and staying updated with the latest technologies and best practices",
+    "ctaTitle": "Ready to work with a certified professional?",
+    "ctaText": "My certifications demonstrate my commitment to excellence and continuous learning",
+    "ctaButton": "Let's Discuss Your Project"
   },
   "contact": {
     "title": "Get In Touch",
@@ -66,7 +121,41 @@
     "getInTouch": "Get in touch with me",
     "socialMedia": "Follow me on social media",
     "phone": "Phone",
-    "country": "Country"
+    "country": "Country",
+    "sendHeader": "Send me a message",
+    "successTitle": "Message Sent Successfully!",
+    "successText": "Thank you for your message. I'll get back to you soon.",
+    "placeholder": {
+      "name": "Your name",
+      "email": "your@email.com",
+      "phone": "Your phone number",
+      "country": "Your country",
+      "subject": "What's this about?",
+      "message": "Tell me about your project..."
+    },
+    "sending": "Sending...",
+    "quickResponseTitle": "Quick Response",
+    "quickResponseText": "I typically respond to messages within 24 hours. For urgent matters, feel free to call directly.",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Quick answers to common questions about working with me",
+      "q1": {
+        "question": "What is your typical project timeline?",
+        "answer": "Project timelines vary based on complexity, but I typically deliver MVP within 2-4 weeks and full projects within 6-12 weeks."
+      },
+      "q2": {
+        "question": "Do you work with international clients?",
+        "answer": "Yes, I work with clients worldwide. I'm comfortable with different time zones and communication preferences."
+      },
+      "q3": {
+        "question": "What is your preferred communication method?",
+        "answer": "I prefer email for formal communication and Slack/Teams for ongoing project discussions. Video calls for important meetings."
+      },
+      "q4": {
+        "question": "Do you provide ongoing maintenance?",
+        "answer": "Yes, I offer maintenance packages for ongoing support, updates, and bug fixes after project completion."
+      }
+    }
   },
   "common": {
     "loading": "Loading...",

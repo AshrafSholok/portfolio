@@ -185,11 +185,11 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
-            {[
-              { number: '50+', label: 'Projects Completed' },
-              { number: '3+', label: 'Years Experience' },
-              { number: '20+', label: 'Happy Clients' },
-              { number: '10+', label: 'Technologies' },
+            { [
+              { number: '50+', label: t('home.stats.projects') },
+              { number: '3+', label: t('home.stats.years') },
+              { number: '20+', label: t('home.stats.clients') },
+              { number: '10+', label: t('home.stats.technologies') },
             ].map((stat, index) => (
               <motion.div
                 key={index}
