@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { DocumentArrowDownIcon, CodeBracketIcon, CpuChipIcon, CloudIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const { t } = useTranslation();
@@ -121,7 +122,7 @@ const About = () => {
                   whileHover={{ scale: 1.02, y: -5 }}
                   className="card p-6 group"
                 >
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center  gap-3">
                     <div className={`p-3 rounded-lg bg-gray-100 dark:bg-gray-700 group-hover:bg-white dark:group-hover:bg-gray-600 transition-colors duration-200`}>
                       <skill.icon className={`w-6 h-6 ${skill.color}`} />
                     </div>
@@ -248,6 +249,7 @@ const About = () => {
             <p className="text-xl mb-8 opacity-90">
               {t('about.ctaText')}
             </p>
+            <Link to="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -255,6 +257,7 @@ const About = () => {
             >
               {t('about.ctaButton')}
             </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>
