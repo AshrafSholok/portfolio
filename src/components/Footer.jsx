@@ -42,8 +42,8 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center space-x-2"
             >
-              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">
-                AM
+              <div className="w-10 h-10">
+                <img src="src/assets/logo.png" alt="Logo" />
               </div>
               <span className="text-lg font-semibold text-gray-900 dark:text-white">
                 Ashraf Mohamed

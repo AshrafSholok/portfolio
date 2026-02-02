@@ -57,9 +57,9 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-primary-600 dark:text-primary-400"
+              className="w-10 h-10"
             >
-              AM
+              <img src="src/assets/logo.png" alt="Logo" />
             </motion.div>
           </Link>
 
