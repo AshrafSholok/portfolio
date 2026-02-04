@@ -48,10 +48,10 @@ const Projects = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 mt-8">
               {t('projects.title')}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mt-4">
               {t('projects.subtitle')}
             </p>
           </motion.div>
@@ -256,6 +256,7 @@ const Projects = () => {
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
               {t('projects.ctaText')}
             </p>
+            <Link to="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -263,6 +264,7 @@ const Projects = () => {
             >
               {t('projects.ctaButton')}
             </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>
