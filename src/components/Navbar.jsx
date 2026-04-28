@@ -3,12 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
-import { 
-  SunIcon, 
-  MoonIcon, 
-  Bars3Icon, 
+import logo from '../assets/logo.png';
+import {
+  SunIcon,
+  MoonIcon,
+  Bars3Icon,
   XMarkIcon,
-  GlobeAltIcon 
+  GlobeAltIcon,
 } from '@heroicons/react/24/outline';
 
 const Navbar = () => {
@@ -25,6 +26,17 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'ar' : 'en';
@@ -46,25 +58,22 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg' 
+        scrolled
+          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 max-w-7xl px-5">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="w-10 h-10"
-            >
-              <img src="src/assets/logo.png" alt="Logo" />
+          <Link to="/" className="flex items-center gap-2" aria-label={t('nav.home')}>
+            <motion.div whileHover={{ scale: 1.05 }} className="h-10 w-10">
+              <img src={logo} alt="Logo" className="h-full w-full object-contain" />
             </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -87,68 +96,76 @@ const Navbar = () => {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center gap-4">
-            {/* Language Toggle */}
+          <div className="flex items-center gap-2 sm:gap-3">
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               onClick={toggleLanguage}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              className="rounded-lg bg-gray-100 p-2.5 text-gray-700 transition-colors duration-200 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
               title={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+              aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
             >
-              <GlobeAltIcon className="w-5 h-5" />
+              <GlobeAltIcon className="h-5 w-5" />
             </motion.button>
 
-            {/* Theme Toggle */}
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              className="rounded-lg bg-gray-100 p-2.5 text-gray-700 transition-colors duration-200 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
               title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              {isDark ? (
-                <SunIcon className="w-5 h-5" />
-              ) : (
-                <MoonIcon className="w-5 h-5" />
-              )}
+              {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
             </motion.button>
 
-            {/* Mobile Menu Button */}
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              onClick={() => setIsOpen((prev) => !prev)}
+              className="rounded-lg bg-gray-100 p-2.5 text-gray-700 transition-colors duration-200 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 md:hidden"
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav-panel"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
-              {isOpen ? (
-                <XMarkIcon className="w-6 h-6" />
-              ) : (
-                <Bars3Icon className="w-6 h-6" />
-              )}
+              {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
             </motion.button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.button
+              type="button"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 top-16 z-40 bg-black/30 backdrop-blur-[1px] md:hidden"
+              aria-label="Close mobile menu backdrop"
+            />
+
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"
+              id="mobile-nav-panel"
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="absolute top-full left-0 right-0 z-50 border-t border-gray-200 bg-white/95 px-4 pb-4 pt-3 shadow-xl backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95 md:hidden"
             >
-              <div className="py-4 space-y-2">
+              <div className="space-y-2">
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-2 rounded-lg font-medium transition-colors duration-200 ${
+                    className={`block rounded-xl px-4 py-3 text-base font-medium transition-colors duration-200 ${
                       location.pathname === item.path
-                        ? 'bg-primary-100 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
-                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                        ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/20 dark:text-primary-300'
+                        : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
                     }`}
                   >
                     {item.name}
@@ -156,9 +173,9 @@ const Navbar = () => {
                 ))}
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
