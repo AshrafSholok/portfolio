@@ -6,6 +6,7 @@ import {
   CloudIcon, 
   WrenchScrewdriverIcon 
 } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -72,7 +73,7 @@ const Skills = () => {
         { name: 'Jira', level: 85, color: 'bg-blue-600' },
         { name: 'Slack', level: 90, color: 'bg-green-500' },
         { name: 'Trello', level: 80, color: 'bg-blue-500' },
-        { name: 'Notion', level: 85, color: 'bg-gray-600' },
+        { name: 'Notion', level: 85, color: 'bg-green-600' },
       ]
     }
   ];
@@ -110,10 +111,10 @@ const Skills = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 mt-8">
               {t('skills.title')}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mt-4 mb-6">
               {t('skills.subtitle')}
             </p>
           </motion.div>
@@ -288,6 +289,7 @@ const Skills = () => {
             <p className="text-xl mb-8 opacity-90">
               Let's discuss how my expertise can help bring your project to life
             </p>
+            <Link to="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -295,6 +297,7 @@ const Skills = () => {
             >
               Start a Conversation
             </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>

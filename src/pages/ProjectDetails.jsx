@@ -66,10 +66,10 @@ const ProjectDetails = () => {
               <motion.button
                 whileHover={{ scale: 1.05, x: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 mb-8"
+                className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 mb-8"
               >
                 <ArrowLeftIcon className="w-5 h-5" />
-                <span>Back to Projects</span>
+                <span>{t('projects.backToProjects')}</span>
               </motion.button>
             </Link>
 
@@ -84,9 +84,9 @@ const ProjectDetails = () => {
                      t('projects.openSource')}
                   </span>
                   {project.featured && (
-                    <div className="flex items-center space-x-1 text-yellow-500">
+                    <div className="flex items-center gap-1 text-yellow-500">
                       <StarIcon className="w-4 h-4" />
-                      <span className="text-sm font-medium">Featured</span>
+                      <span className="text-sm font-medium">{t('projects.featured')}</span>
                     </div>
                   )}
                 </div>
@@ -120,10 +120,10 @@ const ProjectDetails = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="btn-primary flex items-center space-x-2"
+                    className="btn-primary flex items-center space-x-2 gap-1"
                   >
                     <ArrowTopRightOnSquareIcon className="w-5 h-5" />
-                    <span>Live Demo</span>
+                    <span>{t('projects.live')}</span>
                   </motion.a>
                   <motion.a
                     href={project.githubUrl}
@@ -131,10 +131,10 @@ const ProjectDetails = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="btn-outline flex items-center space-x-2"
+                    className="btn-outline flex items-center space-x-2 gap-1"
                   >
                     <CodeBracketIcon className="w-5 h-5" />
-                    <span>View Code</span>
+                    <span>{t('projects.viewCode')}</span>
                   </motion.a>
                 </div>
               </div>
@@ -165,7 +165,7 @@ const ProjectDetails = () => {
                 {/* Screenshots Gallery */}
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                    Project Screenshots
+                    {t('projects.screenshotsTitle')}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {project.screenshots.map((screenshot, index) => (
@@ -200,7 +200,7 @@ const ProjectDetails = () => {
                     className="card p-6"
                   >
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Challenges
+                      {t('projects.challenges')}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
                       {project.challenges}
@@ -214,7 +214,7 @@ const ProjectDetails = () => {
                     className="card p-6"
                   >
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Results
+                      {t('projects.results')}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
                       {project.results}
@@ -233,7 +233,7 @@ const ProjectDetails = () => {
                   className="card p-6"
                 >
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Tech Stack
+                    {t('projects.techStack')}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
@@ -255,22 +255,22 @@ const ProjectDetails = () => {
                   className="card p-6"
                 >
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Project Info
+                    {t('projects.projectInfo')}
                   </h3>
                   <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center gap-3">
                       <CalendarIcon className="w-5 h-5 text-gray-500" />
-                      <span className="text-gray-600 dark:text-gray-400">Year: {project.year}</span>
+                      <span className="text-gray-600 dark:text-gray-400">{t('projects.year')}: {project.year}</span>
                     </div>
                     {project.client && (
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center gap-3">
                         <UserIcon className="w-5 h-5 text-gray-500" />
-                        <span className="text-gray-600 dark:text-gray-400">Client: {project.client}</span>
+                        <span className="text-gray-600 dark:text-gray-400">{t('projects.client')}: {project.client}</span>
                       </div>
                     )}
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center gap-3">
                       <CodeBracketIcon className="w-5 h-5 text-gray-500" />
-                      <span className="text-gray-600 dark:text-gray-400">Category: {project.category}</span>
+                      <span className="text-gray-600 dark:text-gray-400">{t('projects.category')}: {project.category}</span>
                     </div>
                   </div>
                 </motion.div>

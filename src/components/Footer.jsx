@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -9,24 +9,25 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      href: 'https://github.com/ashrafmohamed',
+      href: 'https://github.com/AshrafSholok',
       icon: FaGithub,
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/ashrafmohamed',
+      href: 'https://www.linkedin.com/in/ashraf-mohamed-maher',
       icon: FaLinkedin,
     },
-    {
-      name: 'Twitter',
-      href: 'https://twitter.com/ashrafmohamed',
-      icon: FaTwitter,
-    },
+    
     {
       name: 'Email',
-      href: 'mailto:ashraf@example.com',
+      href: 'mailto:ashrafmohamed2469@gmail.com',
       icon: EnvelopeIcon,
     },
+    {
+      name: 'Whatsapp',
+      href: 'https://wa.me/+201205156675',
+      icon: FaWhatsapp,
+    }
   ];
 
   return (
@@ -41,8 +42,8 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center space-x-2"
             >
-              <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">
-                AM
+              <div className="w-10 h-10">
+                <img src="src/assets/logo.png" alt="Logo" />
               </div>
               <span className="text-lg font-semibold text-gray-900 dark:text-white">
                 Ashraf Mohamed
@@ -149,12 +150,9 @@ const Footer = () => {
           viewport={{ once: true }}
           className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              © 2024 Ashraf Mohamed. All rights reserved.
-            </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
-              Built with React & Tailwind CSS
+              © 2025 Ashraf Mohamed. All rights reserved.
             </p>
           </div>
         </motion.div>

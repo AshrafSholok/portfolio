@@ -106,10 +106,10 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 mt-8">
               {t('contact.title')}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
               {t('contact.subtitle')}
             </p>
           </motion.div>
@@ -128,8 +128,8 @@ const Contact = () => {
               transition={{ duration: 0.8 }}
               className="card p-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Send me a message
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+                {t('contact.sendHeader')}
               </h2>
               
               {isSubmitted ? (
@@ -140,10 +140,10 @@ const Contact = () => {
                 >
                   <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    Message Sent Successfully!
+                    {t('contact.successTitle')}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Thank you for your message. I'll get back to you soon.
+                    {t('contact.successText')}
                   </p>
                 </motion.div>
               ) : (
@@ -161,7 +161,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                        placeholder="Your name"
+                        placeholder={t('contact.placeholder.name')}
                       />
                     </div>
                     <div>
@@ -176,7 +176,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                        placeholder="your@email.com"
+                        placeholder={t('contact.placeholder.email')}
                       />
                     </div>
                   </div>
@@ -193,7 +193,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border  border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                        placeholder="Your phone number"
+                        placeholder={t('contact.placeholder.phone')}
                       />
                     </div>
                     <div>
@@ -208,7 +208,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                        placeholder="Your country"
+                        placeholder={t('contact.placeholder.country')}
                       />
                     </div>
                   </div>
@@ -255,7 +255,7 @@ const Contact = () => {
                     {isSubmitting ? (
                       <>
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        <span>Sending...</span>
+                        <span>{t('contact.sending')}</span>
                       </>
                     ) : (
                       <>
@@ -279,9 +279,9 @@ const Contact = () => {
               {/* Contact Details */}
               <div className="card p-8">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                  Get in touch
+                  {t('contact.getInTouch')}
                 </h2>
-                <div className="space-y-6">
+                <div className="space-y-5">
                   {contactInfo.map((info, index) => (
                     <motion.a
                       key={info.title}
@@ -338,16 +338,16 @@ const Contact = () => {
 
               {/* Response Time */}
               <div className="card p-8 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-                <h3 className="text-xl font-bold mb-2">Quick Response</h3>
+                <h3 className="text-xl font-bold mb-2">{t('contact.quickResponseTitle')}</h3>
                 <p className="opacity-90">
-                  I typically respond to messages within 24 hours. For urgent matters, feel free to call directly.
+                  {t('contact.quickResponseText')}
                 </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-
+                  
       {/* FAQ Section */}
       <section className="section-padding bg-gray-50 dark:bg-gray-800">
         <div className="container-custom">
@@ -359,53 +359,41 @@ const Contact = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Frequently Asked Questions
+              {t('contact.faq.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Quick answers to common questions about working with me
+              {t('contact.faq.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              {
-                question: 'What is your typical project timeline?',
-                answer: 'Project timelines vary based on complexity, but I typically deliver MVP within 2-4 weeks and full projects within 6-12 weeks.',
-              },
-              {
-                question: 'Do you work with international clients?',
-                answer: 'Yes, I work with clients worldwide. I\'m comfortable with different time zones and communication preferences.',
-              },
-              {
-                question: 'What is your preferred communication method?',
-                answer: 'I prefer email for formal communication and Slack/Teams for ongoing project discussions. Video calls for important meetings.',
-              },
-              {
-                question: 'Do you provide ongoing maintenance?',
-                answer: 'Yes, I offer maintenance packages for ongoing support, updates, and bug fixes after project completion.',
-              },
+              { q: t('contact.faq.q1.question'), a: t('contact.faq.q1.answer') },
+              { q: t('contact.faq.q2.question'), a: t('contact.faq.q2.answer') },
+              { q: t('contact.faq.q3.question'), a: t('contact.faq.q3.answer') },
+              { q: t('contact.faq.q4.question'), a: t('contact.faq.q4.answer') },
             ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="card p-6"
-              >
+               <motion.div
+                 key={index}
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: index * 0.1, duration: 0.6 }}
+                 className="card p-6"
+               >
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                  {faq.question}
+                  {faq.q}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  {faq.answer}
+                  {faq.a}
                 </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default Contact;
+               </motion.div>
+             ))}
+           </div>
+         </div>
+       </section>
+     </div>
+   );
+ };
+ 
+ export default Contact;

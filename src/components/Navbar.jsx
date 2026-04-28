@@ -54,17 +54,17 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 max-w-7xl px-5">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center gap-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-primary-600 dark:text-primary-400"
+              className="w-10 h-10"
             >
-              AM
+              <img src="src/assets/logo.png" alt="Logo" />
             </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -87,7 +87,7 @@ const Navbar = () => {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-4">
             {/* Language Toggle */}
             <motion.button
               whileHover={{ scale: 1.1 }}
