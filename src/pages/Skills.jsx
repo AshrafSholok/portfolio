@@ -4,7 +4,13 @@ import {
   CodeBracketIcon, 
   CpuChipIcon, 
   CloudIcon, 
-  WrenchScrewdriverIcon 
+  WrenchScrewdriverIcon,
+  ArrowPathIcon,
+  UserGroupIcon,
+  PuzzlePieceIcon,
+  ChatBubbleLeftRightIcon,
+  BookOpenIcon,
+  MagnifyingGlassIcon
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
@@ -35,7 +41,7 @@ const Skills = () => {
       bgColor: 'bg-green-100 dark:bg-green-900/20',
       skills: [
         { name: 'Node.js', level: 90, color: 'bg-green-600' },
-        { name: 'Express.js', level: 88, color: 'bg-gray-600' },
+        { name: 'Express.js', level: 88, color: 'bg-gray-300' },
         { name: 'Python', level: 85, color: 'bg-yellow-600' },
         { name: 'Django', level: 80, color: 'bg-green-700' },
         { name: 'PostgreSQL', level: 85, color: 'bg-blue-700' },
@@ -143,7 +149,7 @@ const Skills = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: categoryIndex * 0.2, duration: 0.6 }}
-                  className="flex items-center space-x-4 mb-8"
+                  className="flex items-center gap-3 mb-8"
                 >
                   <div className={`p-4 rounded-xl ${category.bgColor}`}>
                     <category.icon className={`w-8 h-8 ${category.color}`} />
@@ -211,64 +217,63 @@ const Skills = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Additional Expertise
+              {t('skills.softSkills.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Beyond technical skills, I bring valuable soft skills and methodologies to every project
+              {t('skills.softSkills.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Agile Methodology',
-                description: 'Experienced in Scrum, Kanban, and other agile frameworks for efficient project management.',
-                icon: '🔄',
+                key: 'agile',
+                icon: ArrowPathIcon,
               },
               {
-                title: 'Team Leadership',
-                description: 'Led development teams and mentored junior developers in best practices.',
-                icon: '👥',
+                key: 'collaboration',
+                icon: UserGroupIcon,
               },
               {
-                title: 'Problem Solving',
-                description: 'Strong analytical skills and creative approach to complex technical challenges.',
-                icon: '🧩',
+                key: 'problemSolving',
+                icon: PuzzlePieceIcon,
               },
               {
-                title: 'Communication',
-                description: 'Excellent communication skills for client interaction and technical documentation.',
-                icon: '💬',
+                key: 'communication',
+                icon: ChatBubbleLeftRightIcon,
               },
               {
-                title: 'Continuous Learning',
-                description: 'Passionate about staying updated with latest technologies and industry trends.',
-                icon: '📚',
+                key: 'learning',
+                icon: BookOpenIcon,
               },
               {
-                title: 'Code Review',
-                description: 'Experienced in conducting thorough code reviews and maintaining code quality.',
-                icon: '🔍',
+                key: 'codeReview',
+                icon: MagnifyingGlassIcon,
               },
-            ].map((skill, index) => (
-              <motion.div
-                key={skill.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="card p-6 text-center group"
-              >
-                <div className="text-4xl mb-4">{skill.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  {skill.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {skill.description}
-                </p>
-              </motion.div>
-            ))}
+            ].map((skill, index) => {
+              const IconComponent = skill.icon;
+              return (
+                <motion.div
+                  key={skill.key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="card p-6 text-center group"
+                >
+                  <div className="mb-4 flex justify-center">
+                    <IconComponent className="w-12 h-12 text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform duration-200" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                    {t(`skills.softSkills.${skill.key}.title`)}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {t(`skills.softSkills.${skill.key}.description`)}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -284,10 +289,10 @@ const Skills = () => {
             className="text-center bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-12 text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to leverage these skills?
+              {t('about.ctaTitle')}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Let's discuss how my expertise can help bring your project to life
+              {t('about.ctaText')}
             </p>
             <Link to="/contact">
             <motion.button
@@ -295,7 +300,7 @@ const Skills = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
             >
-              Start a Conversation
+              {t('about.ctaButton')}
             </motion.button>
             </Link>
           </motion.div>
