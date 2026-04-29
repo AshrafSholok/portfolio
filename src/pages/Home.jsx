@@ -180,8 +180,8 @@ const Home = () => {
             className="grid grid-cols-2 gap-8 md:grid-cols-4"
           >
             {[
-              { number: '50+', label: t('home.stats.projects') },
-              { number: '3+', label: t('home.stats.years') },
+              { number: '20+', label: t('home.stats.projects') },
+              { number: '2+', label: t('home.stats.years') },
               { number: '20+', label: t('home.stats.clients') },
               { number: '10+', label: t('home.stats.technologies') },
             ].map((stat, index) => (
