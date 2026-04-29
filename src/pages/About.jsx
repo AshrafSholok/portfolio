@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { DocumentArrowDownIcon, CodeBracketIcon, CpuChipIcon, CloudIcon } from '@heroicons/react/24/outline';
+import { DocumentArrowDownIcon, CodeBracketIcon, CpuChipIcon, CloudIcon, LightBulbIcon, StarIcon, UserGroupIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -95,7 +95,7 @@ const About = () => {
                 <a
                   href="../../public/Ashraf Mohamed Maher - software Engineer.pdf"
                   download
-                  className="btn-primary flex items-center space-x-2 group w-fit"
+                  className="btn-primary flex items-center group w-fit gap-2"
                   aria-label={t('about.downloadCV')}
                 >
                   <DocumentArrowDownIcon className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" />
@@ -156,7 +156,7 @@ const About = () => {
               {t('about.education.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              My academic background and educational foundation
+              {t('about.education.smallTitle')}
             </p>
           </motion.div>
 
@@ -169,8 +169,8 @@ const About = () => {
           >
             <div className="card p-8 text-center">
               <div className="mb-3">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-white">🎓</span>
+                <div className="w-16 h-16 bg-gray-900 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <AcademicCapIcon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   {t('about.education.degree')}
@@ -207,12 +207,14 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             { [
-              { key: 'innovation', icon: '💡' },
-              { key: 'quality', icon: '⭐' },
-              { key: 'collaboration', icon: '🤝' },
-            ].map((value, index) => (
+              { key: 'innovation', icon: LightBulbIcon },
+              { key: 'quality', icon: StarIcon },
+              { key: 'collaboration', icon: UserGroupIcon },
+            ].map((value, index) => {
+              const IconComponent = value.icon;
+              return (
                <motion.div
-                 key={value.title}
+                 key={value.key}
                  initial={{ opacity: 0, y: 30 }}
                  whileInView={{ opacity: 1, y: 0 }}
                  viewport={{ once: true }}
@@ -220,7 +222,9 @@ const About = () => {
                  whileHover={{ scale: 1.05, y: -5 }}
                  className="card p-8 text-center group"
                >
-                 <div className="text-4xl mb-4">{value.icon}</div>
+                 <div className="mb-4 flex justify-center">
+                   <IconComponent className="w-12 h-12 text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform duration-200" />
+                 </div>
                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                    {t(`about.values.${value.key}.title`)}
                  </h3>
@@ -228,7 +232,8 @@ const About = () => {
                    {t(`about.values.${value.key}.description`)}
                  </p>
                </motion.div>
-             ))}
+              );
+            })}
           </div>
         </div>
       </section>
