@@ -5,7 +5,7 @@ export const projects = [
     description: 'A comprehensive full-stack e-commerce solution with advanced features like inventory management, payment processing, and admin dashboard.',
     image: '/api/placeholder/400/300',
     category: 'freelance',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
+    tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux', 'AWS', 'Docker'],
     liveUrl: 'https://ecommerce-demo.com',
     githubUrl: 'https://github.com/ashrafmohamed/ecommerce',
     featured: true,
