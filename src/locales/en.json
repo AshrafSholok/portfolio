@@ -28,6 +28,7 @@
     "experience": "With years of experience in web development, I specialize in React, Node.js, and cloud technologies. I'm always eager to learn new technologies and take on challenging projects.",
     "education": {
       "title": "Education",
+      "smallTitle": "My academic background and educational foundation",
       "degree": "Bachelor's Degree in Computer Science",
       "university": "Arab Academy for Science, Technology and Maritime Transport",
       "description": "Strong foundation in computer science principles, algorithms, data structures, and software engineering practices."
@@ -36,7 +37,7 @@
     "skills": {
       "frontend": "Frontend Development",
       "backend": "Backend Development",
-      "devops": "Cloud Technologies",
+      "devops": "Cloud Technologies & DevOps",
       "description": "Specialized expertise and hands-on experience"
     },
     "values": {
@@ -93,8 +94,36 @@
     "subtitle": "What I work with",
     "frontend": "Frontend",
     "backend": "Backend",
-    "devops": "DevOps",
-    "tools": "Tools"
+    "devops": "Cloud & DevOps",
+    "tools": "Tools",
+    "softSkills": {
+      "title": "Additional Expertise",
+      "subtitle": "Beyond technical skills, I bring valuable soft skills and methodologies to every project",
+      "agile": {
+        "title": "Agile Methodology",
+        "description": "Experienced in Scrum, Kanban, and other agile frameworks for efficient project management."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Skilled in working effectively with cross-functional teams to achieve common goals."
+      },
+      "problemSolving": {
+        "title": "Problem Solving",
+        "description": "Strong analytical skills and creative approach to complex technical challenges."
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Excellent communication skills for client interaction and technical documentation."
+      },
+      "learning": {
+        "title": "Continuous Learning",
+        "description": "Passionate about staying updated with latest technologies and industry trends."
+      },
+      "codeReview": {
+        "title": "Code Review",
+        "description": "Experienced in conducting thorough code reviews and maintaining code quality."
+      }
+    }
   },
   "certificates": {
     "title": "Certificates",
