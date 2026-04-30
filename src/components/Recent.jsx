@@ -166,6 +166,17 @@ function Recent() {
             </motion.div>
           ))}
         </motion.div>
+        <div className="mt-8 text-center">
+          <Link to="/projects">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
+            >
+              {t('projects.viewAll')}
+            </motion.button>
+          </Link>
+        </div>
       </AnimatePresence>
     </div>
   </section>

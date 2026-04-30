@@ -23,6 +23,8 @@ const ProjectDetails = () => {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   const project = getProjectById(id);
+  const hasLiveUrl = Boolean(project?.liveUrl?.trim());
+  const hasGithubUrl = Boolean(project?.githubUrl?.trim());
 
   if (!project) {
     return <Navigate to="/projects" replace />;
@@ -113,30 +115,37 @@ const ProjectDetails = () => {
                 </p>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <motion.a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-primary flex items-center space-x-2 gap-1"
-                  >
-                    <ArrowTopRightOnSquareIcon className="w-5 h-5" />
-                    <span>{t('projects.live')}</span>
-                  </motion.a>
-                  <motion.a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-outline flex items-center space-x-2 gap-1"
-                  >
-                    <CodeBracketIcon className="w-5 h-5" />
-                    <span>{t('projects.viewCode')}</span>
-                  </motion.a>
-                </div>
+                {(hasLiveUrl || hasGithubUrl) && (
+                  <div className="flex  sm:flex-row gap-4 mb-8">
+                    {hasLiveUrl && (
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="btn-primary flex items-center  gap-2"
+                      >
+                        <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+                        <span>{t('projects.live')}</span>
+                      </motion.a>
+                    )}
+
+                    {hasGithubUrl && (
+                      <motion.a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="btn-outline flex items-center space-x-2 gap-1"
+                      >
+                        <CodeBracketIcon className="w-5 h-5" />
+                        <span>{t('projects.viewCode')}</span>
+                      </motion.a>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Project Image */}
