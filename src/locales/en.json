@@ -63,6 +63,7 @@
   "projects": {
     "title": "My Projects",
     "recent": "Recent Work",
+    "viewAll": "View All Projects",
     "subtitle": "Some of my recent work",
     "freelance": "Freelance Projects",
     "personal": "Personal Projects",

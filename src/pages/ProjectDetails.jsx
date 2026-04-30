@@ -140,14 +140,14 @@ const ProjectDetails = () => {
               </div>
 
               {/* Project Image */}
-              <div className="relative">
+              <div className="relative order-first">
                 <motion.img
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6 }}
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
+                  className="w-full h-64 lg:h-80 object-contain rounded-xl shadow-lg"
                 />
               </div>
             </div>

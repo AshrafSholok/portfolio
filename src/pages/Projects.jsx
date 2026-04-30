@@ -241,7 +241,7 @@ const Projects = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50 dark:bg-gray-800 ">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
