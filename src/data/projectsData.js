@@ -1,25 +1,24 @@
 export const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A comprehensive full-stack e-commerce solution with advanced features like inventory management, payment processing, and admin dashboard.',
-    image: '/api/placeholder/400/300',
+    title: 'Italian Tourism Website',
+    description: 'A responsive multilingual website for an Italian tourism company showcasing Egypt travel packages, destinations, and services.',
+    image: '/src/assets/projects/1/cover.png',
     category: 'freelance',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux', 'AWS', 'Docker'],
-    liveUrl: 'https://ecommerce-demo.com',
-    githubUrl: 'https://github.com/ashrafmohamed/ecommerce',
+    tech: ['HTML', 'CSS', 'JavaScript', 'React JS', 'bootstrap'],
+    liveUrl: 'https://mariomartina.github.io/mario-martina/',
+    githubUrl: '',
     featured: true,
-    year: '2024',
-    client: 'TechCorp Solutions',
+    year: '2023',
+    client: 'Mario&Martina Travel',
     screenshots: [
-      '/api/placeholder/800/600',
-      '/api/placeholder/800/600',
-      '/api/placeholder/800/600',
-      '/api/placeholder/800/600'
+      '/src/assets/projects/1/mockup-desktop-framed.png',
+      '/src/assets/projects/1/mockup-mobile-framed.png',
+      '/src/assets/projects/1/mockup-tablet-framed.png'
     ],
-    longDescription: 'Built a complete e-commerce platform from scratch with modern technologies. Features include user authentication, product catalog, shopping cart, payment integration with Stripe, order management, and admin dashboard for inventory control.',
-    challenges: 'Implementing real-time inventory updates and handling high-traffic scenarios',
-    results: 'Increased client sales by 40% and reduced cart abandonment by 25%'
+    longDescription: 'Developed a responsive website for an Italian tourism company specializing in trips to Egypt. The platform showcases travel packages, highlights key destinations with rich visuals, and provides a seamless browsing experience across devices. Implemented multilingual support (English, Italian, Arabic) using structured translation files and dynamic content loading, making the website accessible to a diverse international audience.',
+    challenges: 'Ensuring seamless multilingual support and optimizing performance for rich media content, Handling multilingual content efficiently and maintaining consistent UI across different languages and screen sizes.',
+    results: 'Improved accessibility for international users through multilingual support and enhanced the overall presentation of travel services, helping the client attract a wider audience.'
   },
   {
     id: 2,
