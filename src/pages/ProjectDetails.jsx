@@ -149,7 +149,7 @@ const ProjectDetails = () => {
               </div>
 
               {/* Project Image */}
-              <div className="relative order-first">
+              <div className="relative order-first lg:order-none md:order-first">
                 <motion.img
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
